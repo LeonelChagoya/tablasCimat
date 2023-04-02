@@ -1,0 +1,15 @@
+.nav{
+display: flex;
+list-style: none;
+column-gap: 2rem;
+font-size: 25px;
+background: white;
+height: 60px;
+justify-content: center;
+align-items: center;
+margin: 0;
+font-family: monospace;
+}
+.nav a{
+    text-decoration: none;
+}

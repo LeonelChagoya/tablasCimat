@@ -31,7 +31,7 @@ class Tablas extends Model
     {
         return DB::select("SELECT 
                 DATE(STR_TO_DATE(ecobici.Fecha_Retiro, '%d-%m-%Y')) as fecha,
-                MONTH(STR_TO_DATE(ecobici.Fecha_Retiro, '%d-%m-%Y')) as mes,
+                DAY(STR_TO_DATE(ecobici.Fecha_Retiro, '%d-%m-%Y')) as dia_mes,
                 FLOOR(ecobici.Edad_Usuario / 5) * 5 as rango_edad,
                 COUNT(ecobici.Bici) as total_bicicletas
             FROM 
@@ -39,9 +39,9 @@ class Tablas extends Model
             WHERE 
                 MONTH(STR_TO_DATE(ecobici.Fecha_Retiro, '%d-%m-%Y')) = 1
             GROUP BY 
-                fecha, mes, rango_edad
+                fecha, dia_mes, rango_edad
             ORDER BY 
-                fecha, mes, rango_edad
+                fecha, dia_mes, rango_edad
                     ");
     }
 }

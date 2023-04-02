@@ -4,12 +4,10 @@ var path = require('path');
 module.exports = {
     //entrada de componentes
   entry: {
-    'tablas/index': './frontend/src/tablas/index.jsx',
+    'tablas/index': './src/pages/tablas/index.jsx',
   
 
-  },
-  
-
+  }, 
   //salida de componentes
   output: {
     path: path.resolve(__dirname, './public/dist'),
@@ -27,8 +25,13 @@ module.exports = {
             presets: ['@babel/preset-react']
           }
         }
-      }
-    ]
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      },
+    ]         
+  }
 
   }
-}
+
