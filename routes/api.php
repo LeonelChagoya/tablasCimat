@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+//genera un json en la url indicada con los datos con la suma total 
+//de bicicletas y dia por genero
+Route::get('genero','App\Http\Controllers\TablasController@DatosPorGenero');
+//genera un json en la url indicada con los datos con la suma total 
+//de bicicletas y dia,por rango edad
+Route::get('rangoedad','App\Http\Controllers\TablasController@DatosPorRangoEdad');
