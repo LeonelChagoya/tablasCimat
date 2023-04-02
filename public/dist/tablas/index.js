@@ -10,13 +10,43 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./frontend/src/components/Loading.jsx":
+/*!*********************************************!*\
+  !*** ./frontend/src/components/Loading.jsx ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Loading)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n\nfunction Loading() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"div\", {\n    class: \"text-center\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"div\", {\n    class: \"spinner-border\",\n    role: \"status\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"span\", {\n    class: \"sr-only\"\n  }, \"Loading...\")));\n}\n\n//# sourceURL=webpack://ejercicio_cimat/./frontend/src/components/Loading.jsx?");
+
+/***/ }),
+
+/***/ "./frontend/src/services/TablasServices.js":
+/*!*************************************************!*\
+  !*** ./frontend/src/services/TablasServices.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst API_BASEURL = \"http://localhost:8000/api\";\nclass TablasServices {\n  getTablaGeneros() {\n    return fetch(API_BASEURL + '/genero');\n  }\n  getTablaRangoEdad() {\n    return fetch(API_BASEURL + '/rangoedad');\n  }\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new TablasServices());\n\n//# sourceURL=webpack://ejercicio_cimat/./frontend/src/services/TablasServices.js?");
+
+/***/ }),
+
+/***/ "./frontend/src/tablas/TablaGenero.js":
+/*!********************************************!*\
+  !*** ./frontend/src/tablas/TablaGenero.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ TablaGenero)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _components_Loading_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Loading.jsx */ \"./frontend/src/components/Loading.jsx\");\n/* harmony import */ var _services_TablasServices__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/TablasServices */ \"./frontend/src/services/TablasServices.js\");\n\n\n\nfunction TablaGenero() {\n  const [datos, setDatos] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]);\n  const [isLoading, setIsLoading] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true);\n  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {\n    _services_TablasServices__WEBPACK_IMPORTED_MODULE_2__[\"default\"].getTablaGeneros().then(res => res.json()).then(res => {\n      setDatos(res);\n      setIsLoading(false);\n    });\n  });\n  if (isLoading) {\n    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Loading_jsx__WEBPACK_IMPORTED_MODULE_1__[\"default\"], null);\n  }\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"section\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"table\", {\n    class: \"table\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"thead\", {\n    class: \"thead-dark\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"tr\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"th\", {\n    scope: \"col\"\n  }, \"Dia\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"th\", {\n    scope: \"col\"\n  }, \"Genero\"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"th\", {\n    scope: \"col\"\n  }, \"Numero de bicicletas retiradas\"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"tbody\", null, datos.map(dato => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"tr\", {\n    key: \"\"\n  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"td\", null, dato.dia_mes), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"td\", null, dato.Genero_Usuario), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"td\", null, dato.total_bicicletas))))));\n}\n\n//# sourceURL=webpack://ejercicio_cimat/./frontend/src/tablas/TablaGenero.js?");
+
+/***/ }),
+
 /***/ "./frontend/src/tablas/index.jsx":
 /*!***************************************!*\
   !*** ./frontend/src/tablas/index.jsx ***!
   \***************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ App)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ \"./node_modules/react-dom/client.js\");\n\n\nclass App extends react__WEBPACK_IMPORTED_MODULE_0__.Component {\n  render() {\n    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"main\", null, \"hola hugo edit\");\n  }\n}\n(0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(document.getElementById('root')).render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(App, null));\n\n//# sourceURL=webpack://ejercicio_cimat/./frontend/src/tablas/index.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ App)\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ \"./node_modules/react-dom/client.js\");\n/* harmony import */ var _TablaGenero__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TablaGenero */ \"./frontend/src/tablas/TablaGenero.js\");\n\n\n\nclass App extends react__WEBPACK_IMPORTED_MODULE_0__.Component {\n  render() {\n    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(\"main\", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_TablaGenero__WEBPACK_IMPORTED_MODULE_2__[\"default\"], null));\n  }\n}\n(0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(document.getElementById('root')).render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(App, null));\n\n//# sourceURL=webpack://ejercicio_cimat/./frontend/src/tablas/index.jsx?");
 
 /***/ }),
 
