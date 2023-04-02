@@ -1,0 +1,29 @@
+{
+  "name": "ejercicio_cimat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/preset-react": "^7.18.6",
+    "babel-loader": "^9.1.2",
+    "path": "^0.12.7",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.9.0",
+    "next": "13.2.4"
+   
+  },
+  "devDependencies": {
+    "webpack-cli": "^5.0.1"
+  }
+}
